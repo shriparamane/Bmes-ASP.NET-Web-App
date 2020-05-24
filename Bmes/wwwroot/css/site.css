@@ -1,71 +1,74 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+﻿body {
+    padding: 0px;
+    margin: 0px;
 }
 
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+form {
+    padding: 0px;
+    margin: 0px;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+/* Set padding to keep content from hitting the edges */
+.body-content {
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+.field-validation-valid {
+    display: none;
 }
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+input.input-validation-error {
+    border: 1px solid #b94a48;
 }
 
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
+.validation-summary-errors {
+    color: #b94a48;
 }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+.validation-summary-valid {
+    display: none;
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+
+/*Pagination Color*/
+.custom-pagination .pagination > li > a,
+.custom-pagination .pagination > li > span {
+    border: 1px solid purple;
+    color: purple;
 }
+
+.pagination > li.active > span {
+    background-color: purple;
+    color: #fff;
+}
+
+    .pagination > li.active > span:hover {
+        background-color: #a64ca6;
+        border: 1px solid #a64ca6;
+        color: white;
+    }
+
+/*Equal Heights*/
+
+.row.display-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .row.display-flex > [class*='col-'] {
+        display: flex;
+        flex-direction: column;
+    }

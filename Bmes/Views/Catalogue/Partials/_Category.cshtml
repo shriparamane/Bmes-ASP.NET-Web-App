@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Category>
+
+<h5 class="category__heading">Categories</h5>
+
+@foreach (var category in Model)
+{
+  <div class="category__list-wrapper">
+    @if (category.Slug == (string)@ViewData["SelectedCategory"])
+    {
+      <a href="/catalogue/@category.Slug/@ViewData["SelectedBrand"]/" class="category__selected">@category.Name</a>
+    }
+    else
+    {
+      <a href="/catalogue/@category.Slug/@ViewData["SelectedBrand"]/" class="category__not-selected">@category.Name</a>
+    }
+  </div>
+}
+
