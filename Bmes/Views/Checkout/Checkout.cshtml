@@ -1,0 +1,66 @@
+﻿@model CheckoutViewModel
+@{
+  ViewData["Title"] = "Checkout";
+}
+
+<div class="checkout">
+  <div class="panel panel-default checkout__panel">
+    <div class="panel-heading checkout__header">
+      <h1 class="panel-title checkout__panel-title">
+        <span>Submit Your Order</span>
+      </h1>
+    </div>
+    <form asp-controller="Checkout" asp-action="Checkout" method="POST" style="padding-bottom: 0px;">
+
+      <div class="panel-body checkout__panel-body">
+        <div class="form-group">
+          <label class="checkout__input-label" asp-for="FirstName">First Name</label>
+          <input class="form-control checkout__subject-input" asp-for="FirstName" required />
+        </div>
+        <div class="form-group">
+          <label class="checkout__input-label" asp-for="MiddleName">Middle Name</label>
+          <input class="form-control checkout__subject-input" asp-for="MiddleName" />
+        </div>
+        <div class="form-group">
+          <label class="checkout__input-label" asp-for="LastName">Last Name</label>
+          <input class="form-control checkout__subject-input" asp-for="LastName" required />
+        </div>
+        <div class="form-group">
+          <label class="checkout__input-label" asp-for="EmailAddress">Email Address</label>
+          <input class="form-control checkout__subject-input" asp-for="EmailAddress" required />
+        </div>
+        <div class="form-group">
+          <label class="checkout__input-label" asp-for="AddressLine1">Address Line 1</label>
+          <input class="form-control checkout__subject-input" asp-for="AddressLine1" required />
+        </div>
+        <div class="form-group">
+          <label class="checkout__input-label" asp-for="AddressLine2">Address Line 2</label>
+          <input class="form-control checkout__subject-input" asp-for="AddressLine2" required />
+        </div>
+        <div class="form-group">
+          <label class="checkout__input-label" asp-for="City">City</label>
+          <input class="form-control checkout__subject-input" asp-for="City" required />
+        </div>
+        <div class="form-group">
+          <label class="checkout__input-label" asp-for="Country">Country</label>
+          <input class="form-control checkout__subject-input" asp-for="Country" required />
+        </div>
+        <div class="form-group">
+          <label class="checkout__input-label" asp-for="State">State</label>
+          <input class="form-control checkout__subject-input" asp-for="State" required />
+        </div>
+        <div class="form-group">
+          <label class="checkout__input-label" asp-for="ZipCode">Zip Code</label>
+          <input class="form-control checkout__subject-input" asp-for="ZipCode" required />
+        </div>
+      </div>
+      <div class="panel-footer">
+        <div class="checkout__flex-container">
+          <a class="btn btn-sm checkout__button" asp-controller="Cart" asp-action="CartDetail">Cancel </a>
+          <button class="btn btn-sm checkout__button" type="submit">Submit Order</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

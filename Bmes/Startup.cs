@@ -27,13 +27,24 @@ namespace Bmes
         {
             services.AddControllersWithViews();
             services.AddMvc(options => options.EnableEndpointRouting = false);
+            services.AddMemoryCache();
+            services.AddSession();
             services.AddDbContext<BmesDbContext>(options => options.UseSqlite(Configuration["Data:BmesWebApp:ConnectionString"]));
 
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<IBrandRepository, BrandRepository>();
             services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<ICartRepository, CartRepository>();
+            services.AddTransient<ICartItemRepository, CartItemRepository>();
+            services.AddTransient<IAddressRepository, AddressRepository>();
+            services.AddTransient<IPersonRepository, PersonRepository>();
+            services.AddTransient <ICustomerRepository, CustomerRepository> ();
+            services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddTransient<IOrderItemRepository, OrderItemRepository>();
 
             services.AddTransient<ICatalogueService, CatalogueService>();
+            services.AddTransient<ICartService, CartService>();
+            services.AddTransient<ICheckoutService, CheckoutService>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
@@ -47,7 +58,7 @@ namespace Bmes
                 app.UseDeveloperExceptionPage();
             }
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthorization();
